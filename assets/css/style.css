@@ -23,9 +23,23 @@ body{
 }
 
 .contenedor{
+    width: 100%;
+
 }
 
 /* Tipografia */
+a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    /* background-color: var(--oscuro); */
+    padding: 1rem;
+    filter: opacity(40%);
+}
+a:hover{
+    background-color: var(--oscuro);
+    filter: none;
+}
 h1{
     font-size: 3.8rem !important;
 }
@@ -35,7 +49,7 @@ h2{
 }
 
 h3{
-    font-size: 1.8rem !important;
+    font-size: 2rem !important;
 }
 
 h1, h2, h3{
@@ -44,189 +58,65 @@ h1, h2, h3{
 }
 
 p{
-    font-size: 1.5rem !important;
+    font-size: 1.8rem !important;
 }
 
 /* Header */
 .header{
-    margin: -5px;
-    width: 100%;
-    height: auto;
-}
-
-.header .imagen-fondo{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.header .imagen-fondo img{
-    width: 100%;
-    height: 700px;
-    vertical-align: top;
-    object-fit: cover;
-}
-
-
-.header .contenido-header{
-    margin-top: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    background-image: url(../img/disenoweb.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter:drop-shadow(10%);
+    height: 60rem;
     display: flex;
-    padding: 1.5rem 0;
-    z-index: 2;
-    position: fixed;
-}
 
-.header .contenido-header .logo{
-    width: 30%;
 }
-
-.header .contenido-header .logo img{
-    width: 7rem;
-    transform: scale(1);
-    transition: transform(0.5s);
+.header__logo{
+    flex: 1;
+    
+    text-align: left;
 }
-
-.header .contenido-header .logo img:hover{
-    transform: scale(1.2);
+.header__logo--imagen{
+    width: 10rem;
 }
-
-.header .contenido-header .navegacion{
-    width: 68%;
+.header__menu{
+    visibility: hidden;
     text-align: right;
-    padding: 12px;
-    visibility: visible;
 }
-
-
-@media (max-width: 890px) { 
-    .header .contenido-header .navegacion{
-        /* visibility: hidden; */
-        
+.header__navegacion{
+    display: flex;
+    gap: 2rem;
+    justify-content: right;
+}
+.boton{
     visibility: visible;
-        position: fixed;
-    width: 100%;
-    justify-content: space-evenly;
+    text-align: right;
+    margin-right: 4rem;
     align-items: center;
-    height: 100%;
-    z-index: 4;
-    background: #1FA2FF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1fa2ff, #12D8FA, #A6FFCB);
-    flex-direction: column;
-    display: flex;
-    clip-path: circle(0% at 100% 0);
-    transition: clip-path 2s;
-    }
-    .click{
-        visibility: hidden;
-        clip-path: circle(150% at 100% 0);
-        transition: clip-path 2s;
-    }
-}
-
-
-.header .contenido-header .menu-header{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: white;
-    border-radius: 100%;
-    width: 70px;
-    height: 70px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-    z-index: 5;
+    color: var(--blanco);
+}
+.boton:hover{
     cursor: pointer;
 }
-
-.menu-header img{
-    width: 60%;
+.imagen--boton{
+    width: 5rem;
+    background-color: var(--blanco);
+    border-radius: 100%;
+    padding: 1rem;
 }
-
-@media (min-width: 900px) { 
-    .header .contenido-header .menu-header{
+@media (min-width: 768px) { 
+    .header__navegacion{
+        flex: 3;
+        padding: 4rem;
+        visibility: visible;
+    }
+    .boton{
         visibility: hidden;
     }
 }
 
-.header .contenido-header .navegacion a{
-    text-decoration: none;
-    color: var(--blanco);
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    background:rgba(65, 60, 60, 0.5);
-    block-size: auto;
-}
-
-.header .contenido-header .navegacion a:hover{
-    background-color: var(--oscuro);
-    block-size: auto;
-}
-
-.header .menu-hover{
-    margin-top: 0;
-    position: absolute;
-    top: 47px;
-    right: -863px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 0;
-    z-index: 2;
-    position: fixed;
-    visibility: hidden;
-}
-
-
-
-.efecto{
-    visibility: visible !important;
-}
-
-.header .menu-hover .navegacion-hover{
-    width: 25%;
-    text-align: right;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    justify-content: flex-end;
-    text-align: right;
-}
-
-
-.header .menu-hover .navegacion-hover a{
-    text-decoration: none;
-    color: var(--blanco);
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 700;
-    background:rgba(65, 60, 60, 0.5);
-    margin-top: 5px;
-}
-
-.Bienvenida{ 
-    margin-top: 0;
-    position: absolute;
-    top: 0;
-    left: 150px;
-    width: 100%;
-    display: flex;
-    padding: 1.5rem 0;
-    text-shadow: aliceblue;
-}
-
-@media (max-width: 768px) { 
-    .Bienvenida{
-        visibility: hidden;
-    }
-}
 
 /* Seciotn */
 .section{
@@ -281,7 +171,13 @@ p{
     justify-content: center;
 }
 
-/* Servicios */
+/*Carrusel*/
+
+.container{
+    max-width: 80%, !important;
+}
+
+/* Herramientas de desarrollo */
 
 .section .Contenido-Servicios{
     width: 100%;
@@ -323,8 +219,40 @@ p{
     }
 }
 
-/* Slider */
+/*Servicios*/
 
+.contenedor-servicios{
+    display: flex;
+    max-width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-left: 10rem;
+    gap: 4rem;
+}
+.ofertas{
+    width: 100%;
+}
+.diseno-card{
+    padding: 5rem;
+}
+
+@media (min-width: 768px) { 
+    .contenedor-servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+        margin-left: 20rem;
+    }
+    .ofertas{
+        width: 100%;
+    }
+
+    .diseno-card{
+        padding: 5rem;
+    }
+   
+}
 
 /* Footer */
 .footer{
